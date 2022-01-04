@@ -1,0 +1,10 @@
+#containerregistration{
+	#liner-gradient(to bottom,@68eacc 0%,#497be8 100%);
+}
+@media screen and (max-width: 600px) {
+  i.email  {
+    float: none;
+    width: 100%;
+  }
+}
+	
