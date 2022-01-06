@@ -12,7 +12,11 @@ form
     width: 100%;
   }
 }
-
+#submit{
+	margin-left:25%;
+	width:50%;
+	margin-bottom:1%;
+}
 /*.col-sm-10{
 position: relative;
     min-height: 1px;
