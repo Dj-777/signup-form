@@ -42,5 +42,5 @@
 				Sign-up Form
 			</h1>
 		</div>
-</head>
+	</head>
 <body>
