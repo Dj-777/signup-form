@@ -2,7 +2,7 @@
 require 'header.php';
 ?>
 
-<body>
+
 	<div class="container" id="containerregistration" >
 		
 		<form method="post" action="database/registration.php" name="signupform" onsubmit="return validateform()">
@@ -141,8 +141,9 @@ require 'header.php';
 		
 
 	</div>
-</body>
 <?php
 session_destroy();
 ?>
+</body>
+
 </html>
