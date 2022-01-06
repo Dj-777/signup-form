@@ -1,12 +1,30 @@
 <?php 
 require 'header.php';
-
 ?>
 
 <body>
-	<div class="container" id="containerregistration">
-
+	<div class="container" id="containerregistration" >
+		
 		<form method="post" action="database/registration.php" name="signupform" onsubmit="return validateform()">
+		<!--For Display Proper Error Message For Successfull Data registration And Email is already Taken  -->
+		
+		<?php
+		session_start();
+			if(isset($_SESSION['errormessageforemail']) && !empty($_SESSION['errormessageforemail'])){
+				echo  $_SESSION['errormessageforemail'];
+				//header("refresh: 5; url = http://localhost/signup/registration.php");
+			}
+			elseif (isset($_SESSION['displaysuccessmessage']) && !empty($_SESSION['displaysuccessmessage'])){
+				echo  $_SESSION['displaysuccessmessage'];
+				header("refresh: 5; url = http://localhost/signup/registration.php");
+			}
+			
+		?>	
+		<!--For Display Proper Error Message For Successfull Data registration And Email is already Taken  -->
+		<br>
+			<div id="error_message">
+			</div>
+			
 			<div class="row">
 				<div class="col-sm-1">
 				    <i class="fa fa-envelope-square fa-2x float-right"></i>
@@ -54,9 +72,11 @@ require 'header.php';
 				  <i class="fa fa-address-book fa-2x float-right"></i>
 				</div>
 				<div class="col-sm-10" >
-					<textarea class="form-control" name="address" id="address" value="address"  rows="3" placeholder="Enter your Message"  >
-					 
-					</textarea>
+					<div class="form-group">
+					   <div class="col-lg-12">
+						   <textarea name="address" id="address" class="form-control" cols="20" rows="3" placeholder="Enter your Address"></textarea>
+					   </div><!--end col 10-->
+					 </div><!--ends from group-->
 				</div>
 			</div>
 			<br>
@@ -111,14 +131,18 @@ require 'header.php';
 				</div>
 			</div>
 			<br>
+			<br>
 			<div class="row">
 				<div class="col-sm-12">
 					<input type="submit"  class="btn btn-success btn-mg btn-block" name="submit" id="submit">
 				</div>
 			</div>
 		</form>
+		
 
 	</div>
 </body>
-
+<?php
+session_destroy();
+?>
 </html>
