@@ -1,10 +1,24 @@
-#containerregistration{
-	#liner-gradient(to bottom,@68eacc 0%,#497be8 100%);
+body{
+	background-color:#F2F2F2;
 }
-@media screen and (max-width: 600px) {
+form
+{
+	background-color:#DADADA;
+}
+#containerregistration{
+	margin-top:1%;
+}
+
+@media screen and (max-width: 992px) {
   i  {
     float: none;
     width: 100%;
   }
 }
-	
+
+/*.col-sm-10{
+position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 0px;
+}*/
