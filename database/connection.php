@@ -8,10 +8,3 @@
 		echo "Connected Successfully";
 	}
 ?>
-<html>
-<head>
-<script>
-	
-</script>
-</head>
-</html>
