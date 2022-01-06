@@ -5,6 +5,13 @@
 	}
 	else
 	{
-		echo "Connection Successfully";
+		echo "Connected Successfully";
 	}
 ?>
+<html>
+<head>
+<script>
+	
+</script>
+</head>
+</html>
