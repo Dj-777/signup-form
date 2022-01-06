@@ -1,8 +1,7 @@
 <?php 
 require 'header.php';
 ?>
-
-
+<body>
 	<div class="container" id="containerregistration" >
 		
 		<form method="post" action="database/registration.php" name="signupform" onsubmit="return validateform()">
@@ -134,7 +133,7 @@ require 'header.php';
 			<br>
 			<div class="row">
 				<div class="col-sm-12">
-					<input type="submit"  class="btn btn-success btn-mg btn-block" name="submit" id="submit">
+					<input type="submit"  class="btn btn-success btn-mg " name="submit" id="submit">
 				</div>
 			</div>
 		</form>
@@ -145,5 +144,4 @@ require 'header.php';
 session_destroy();
 ?>
 </body>
-
 </html>
