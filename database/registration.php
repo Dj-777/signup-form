@@ -145,8 +145,8 @@ if(isset($_REQUEST["submit"])){
 				$mail->isSMTP();                                      // Set mailer to use SMTP
 				$mail->Host = 'smtp.gmail.com;';  // Specify main and backup SMTP servers
 				$mail->SMTPAuth = true;                               // Enable SMTP authentication
-				$mail->Username = 'thedjgamer777@gmail.com';                 // SMTP username
-				$mail->Password = '05092001_dj';                           // SMTP password
+				$mail->Username = 'onlyforcompanywork@gmail.com';                 // SMTP username
+				$mail->Password = 'work@work';                           // SMTP password
 				$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 				$mail->Port = 587;                                    // TCP port to connect to
 
@@ -160,7 +160,7 @@ if(isset($_REQUEST["submit"])){
 
 				$mail->setFrom($emails, 'Login');
 				$mail->addAddress($emails);              // Add a recipient
-				$mail->addReplyTo('thedjgamer777@gmail.com');
+				$mail->addReplyTo('onlyforcompanywork@gmail.com');
 
 				
 				$mail->Subject = 'OTP';
@@ -185,58 +185,14 @@ if(isset($_REQUEST["submit"])){
 						$_SESSION['pincode']=$pincode;
 						$_SESSION['date']=$date;
 						
-						echo '<div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-body">
-											<p>OTP has been sent please check your mail</p>
-											<form method="post">
-												<input type="number" class="form-control" placeholder="Enter OTP Here..." name="otpfromuser" id="otpfromuser">
-												<button type="submit" name="otpbuttoncheck" id="otpbuttoncheck" class="btn btn-primary">Submit</button>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>';
+						header("Location:http://localhost/signup/registration.php");
+						exit;	
+						
 					}
 			}  
 								
 	}
 } 		
-		if(isset($_REQUEST["otpbuttoncheck"]))
-					{
-						$email=$_SESSION['email'];
-						$name=$_SESSION['name'];
-						$hash=$_SESSION['hash'];
-						$gender=$_SESSION['gender'];
-						$address=$_SESSION['address'];
-						$countries=$_SESSION['countries'];
-						$states=$_SESSION['states'];
-						$city=$_SESSION['city'];
-						$pincode=$_SESSION['pincode'];
-						$date=$_SESSION['date'];
-						
-						$rno=$_SESSION['OTP'];
-						
-						$urno=$_POST["otpfromuser"];
-						if(!strcmp($rno,$urno))
-						{
-							$query="insert into registration(email,name,password,gender,address,countries,states,city,pincode,date)values('$email','$name','$hash','$gender','$address','$countries','$states','$city','$pincode','". $date ."')";
-							$success=mysqli_query($link,$query);
-							if($success){
-							//$display_name_aftersuccessfulreg=$name;
-							$displaysuccessmessage="<div class='alert alert-success alert-dismissible'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>$name Your Data Has Been Successfully Stored.</div>";
-							
-							$_SESSION['displaysuccessmessage']=$displaysuccessmessage;
-							header("Location:http://localhost/signup/registration.php");
-							exit;
-							}
-						}
-						else{
-							echo"OTP IS WRONG";
-							header("Location:http://localhost/signup/registration.php");
-							exit;
-						}
-						}
+		
 	
 ?>

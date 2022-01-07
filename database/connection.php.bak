@@ -1,10 +1,10 @@
 <?php
-	$connect=mysqli_connect("localhost","root","","signup");
-	if($connect->connect_error){
-		die("Connection Failed:" .$connect->connect_error );
+	$link=mysqli_connect("localhost","root","","signup");
+	if($link->connect_error){
+		die("Connection Failed:" .$link->connect_error );
 	}
 	else
 	{
-		echo "Connection Successfully";
+		echo 'Connected Successfully';
 	}
 ?>

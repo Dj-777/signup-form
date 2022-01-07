@@ -1,0 +1,23 @@
+html,body {
+  background-color: #f2f2f2 !important;
+}
+h1 {
+	margin-bottom:20px !important;
+    text-align:center;
+	font-style: italic;
+	font-weight:bold; 
+	font-family: Copperplate !important;
+}
+/*.multicolortext {
+        background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }*/
+#containerheader {
+    background-color: powderyellow;
+	border-radius:20px;
+	margin-top:2%;
+	border:1px dotted gray;
+}
