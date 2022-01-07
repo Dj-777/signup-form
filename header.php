@@ -12,7 +12,10 @@
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
 
+		<script src="js/bootstrap.min.js"></script>
 		<!-- jQuery library -->
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
 
@@ -36,10 +39,14 @@
 		<title>
 			Welcome||Signup
 		</title>
-		
+		<script>
+			$(document).ready(function(){
+				$("#myModal").modal('show');
+			});
+		</script>
 		<div class="container" id="containerheader">
 			<h1>
-				Sign-up Form
+				<span class="multicolortext">Sign-up Form</span>
 			</h1>
 		</div>
 	</head>
