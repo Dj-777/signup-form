@@ -1,6 +1,5 @@
 <?php 
 require 'header.php';
-session_start();
 ?>
 <body>
 	<div class="container" id="containerregistration" >
@@ -9,6 +8,7 @@ session_start();
 		<!--For Display Proper Error Message For Successfull Data registration And Email is already Taken  -->
 		
 		<?php
+		session_start();
 			if(isset($_SESSION['errormessageforemail']) && !empty($_SESSION['errormessageforemail'])){
 				echo  $_SESSION['errormessageforemail'];
 				//header("refresh: 5; url = http://localhost/signup/index.php");
@@ -17,22 +17,7 @@ session_start();
 				echo  $_SESSION['displaysuccessmessage'];
 				header("refresh: 5; url = http://localhost/signup/index.php");
 			}
-			elseif(isset($_SESSION['OTP']) && !empty($_SESSION['OTP'])){
 			
-			echo '<div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-body">
-											<p>OTP has been sent please check your mail</p>
-											<form method="get">
-												<input type="number" class="form-control" placeholder="Enter OTP Here..." name="otpfromuser" id="otpfromuser">
-												<button type="submit" name="otpbuttoncheck" id="otpbuttoncheck" class="btn btn-primary">Submit</button>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>';
-}
 		?>	
 		<!--For Display Proper Error Message For Successfull Data registration And Email is already Taken  -->
 		<br>
@@ -156,42 +141,6 @@ session_start();
 
 	</div>
 <?php
-			
-				if(isset($_REQUEST["otpbuttoncheck"]))
-					{
-						$email=$_SESSION['email'];
-						$name=$_SESSION['name'];
-						$hash=$_SESSION['hash'];
-						$gender=$_SESSION['gender'];
-						$address=$_SESSION['address'];
-						$countries=$_SESSION['countries'];
-						$states=$_SESSION['states'];
-						$city=$_SESSION['city'];
-						$pincode=$_SESSION['pincode'];
-						$date=$_SESSION['date'];
-						
-						$rno=$_SESSION['OTP'];
-						echo $rno;
-						$urno=$_GET["otpfromuser"];
-						if(!strcmp($rno,$urno))
-						{
-							$query="insert into registration(email,name,password,gender,address,countries,states,city,pincode,date)values('$email','$name','$hash','$gender','$address','$countries','$states','$city','$pincode','". $date ."')";
-							$success=mysqli_query($link,$query);
-							if($success){
-							//$display_name_aftersuccessfulreg=$name;
-							$displaysuccessmessage="<div class='alert alert-success alert-dismissible'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>$name Your Data Has Been Successfully Stored.</div>";
-							
-							$_SESSION['displaysuccessmessage']=$displaysuccessmessage;
-							header("Location:http://localhost/signup/index.php");
-							exit;
-							}
-						}
-						else{
-							echo"OTP IS WRONG";
-							header("Location:http://localhost/signup/index.php");
-							exit;
-						}
-					}	
 session_destroy();
 ?>
 </body>
