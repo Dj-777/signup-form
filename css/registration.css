@@ -15,7 +15,17 @@ form
 #submit{
 	margin-left:25%;
 	width:50%;
-	margin-bottom:1%;
+	
+}
+hr.solid {
+  border-top: 3px solid #949494;
+}
+.forgetdetails{
+	text-align:center;
+	text-transform: uppercase;
+	font-style: oblique;
+	font-size:15px;
+	color:#2D75E3;
 }
 /*.col-sm-10{
 position: relative;
