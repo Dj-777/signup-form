@@ -136,6 +136,13 @@ require 'header.php';
 					<input type="submit"  class="btn btn-success btn-mg " name="submit" id="submit">
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-sm-12">
+				<hr class="solid">
+					<a href="forgetdetails.php"><p class="forgetdetails">forget-details?</p></a>
+				</div>
+			</div>
+			
 		</form>
 		
 
