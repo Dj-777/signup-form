@@ -4,8 +4,10 @@
 		<link rel="stylesheet" type="text/css" href="css/header.css">
 		
 		<link rel="stylesheet" type="text/css" href="css/registration.css">
+		<link rel="stylesheet" type="text/css" href="css/forgetdetails.css">
 		
 		<script src="js/registration.js" type="text/javascript"></script>
+		<script src="js/forgetdetails.js" type="text/javascript"></script>
 		
 		<meta charset="UTF-8">
 		<meta name='viewport' content='width=device-width, initial-scale=1'>
