@@ -6,5 +6,7 @@ If you get fatal error("smtp error: could not authenticate”) in PHPMailer
 
 please  change 
 
+on forgetdetails.php and registration.php
+
 $mail->Username = 'Enter Your Email';                 
 $mail->Password = 'Enter Your Password'; 
